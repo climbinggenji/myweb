@@ -1,5 +1,10 @@
 # lengcan
 
+## Tips
+```
+You can preview my personal website at (www.lengcan0926.cn)
+```
+
 ## Project setup
 ```
 npm install

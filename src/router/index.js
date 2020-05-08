@@ -23,12 +23,27 @@ Vue.use(VueRouter)
     component: Contact
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/error',
+    name: 'error',
+    component:  resolve => require(['@/views/error.vue'], resolve)
+  },
+  {
+    path: '/project',
+    name: 'Project',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Project.vue')
+  },
+  {
+    path: '/snake',
+    name: 'Snake',
+    component: resolve => require(['@/views/projects/snake.vue'], resolve)
+  },
+  {
+    path: '/echarts-lolsth',
+    name: 'echarts-lolsth',
+    component: resolve => require(['@/views/projects/echarts-lolsth.vue'], resolve)
   }
 ]
 

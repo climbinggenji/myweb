@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar></Navbar>
-    <router-view />
+    <router-view v-if="isRouterAlive" />
   </div>
 </template>
 <script>
@@ -10,11 +10,23 @@ export default {
   components: {
     Navbar
   },
+  provide () {
+    return {
+      reload: this.reload
+    }
+  },
   data() {
     return {
+      isRouterAlive: true
     }
   },
   methods: {
+    reload() {
+      this.isRouterAlive = false
+      this.$nextTick(function() {
+        this.isRouterAlive = true
+      })
+    }
   }
 }
 </script>
@@ -33,5 +45,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: #666;
 }
 </style>

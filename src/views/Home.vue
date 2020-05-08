@@ -23,6 +23,8 @@ export default {
   flex-grow: 1;
   display: flex;
   justify-content: center;
+  background: url('./../assets/images/bg.jpg') no-repeat;
+  background-size: 100% 100%;
 
   align-items: center;
   .text {

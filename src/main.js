@@ -5,11 +5,13 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import animated from 'animate.css'
+import echarts from 'echarts'
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 Vue.use(animated)
+Vue.prototype.$echarts = echarts
 
 new Vue({
   router,
